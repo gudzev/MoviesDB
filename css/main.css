@@ -1,0 +1,130 @@
+main
+{
+    background-color: var(--primary-color);
+    height: 100%;
+    padding-top: 140px;
+}
+
+.section
+{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-header
+{
+    font-weight: bold;
+    width: 1200px;
+    height: 70px;
+    
+    display: flex;
+    align-items: center;
+}
+
+.list-header h1
+{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.movie-container
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+    height: 360px;
+    width: 1200px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.movie
+{
+    width: 210px;
+    height: 300px;
+    background-color: var(--text-color);
+    flex-shrink: 0;
+}
+
+.spacer
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Mobile */
+@media screen and (max-width: 900px) 
+{
+    main
+    {
+        background-color: var(--primary-color);
+        height: 100%;
+        width: 100vw;
+        padding-top: 140px;
+    }
+
+    .section
+    {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-header
+    {
+        font-weight: bold;
+        width: 100vw;
+        height: 70px;
+        
+        display: flex;
+        align-items: center;
+    }
+
+    .list-header h1
+    {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        font-weight: bold;
+        padding: 0px 20px;
+    }
+
+    .movie-container
+    {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+        height: 360px;
+        width: 95vw;
+        padding: 0px 5px;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .movie
+    {
+        display: flex;
+        flex-direction: column;
+        width: 165px;
+        height: 330px;
+        background-color: var(--text-color);
+        flex-shrink: 0;
+    }
+
+    .spacer
+    {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}

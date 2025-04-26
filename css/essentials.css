@@ -1,0 +1,51 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+:root
+{
+    --bg-color: #0D1B2A;
+
+    --text-color: #E0E1DD;
+    --text-hover: #B0BCC8;
+
+    --primary-color: #1B263B;
+    --primary-hover: #415A77;
+
+    --accent-color: #F4D58D;
+    --accent-hover: #E0C072;
+}
+
+.poppins-light 
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.poppins-regular 
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+ .poppins-bold 
+{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.hidden
+{
+    display: none !important;
+}
