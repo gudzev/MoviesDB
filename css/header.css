@@ -60,7 +60,7 @@ header nav ul li a
 
 header nav ul li a:hover
 {
-    color: var(--text-hover);
+    color: var(--accent-hover);
 }
 
 .search-icon
@@ -69,7 +69,7 @@ header nav ul li a:hover
     font-size: 1.5rem;
     color: var(--accent-color);
     cursor: pointer;
-    right: 10%;
+    right: 5%;
     top: 50%;
     transform: translateY(-50%);
     transition: all .3s;
@@ -124,14 +124,6 @@ header nav ul li a:hover
     header nav ul li a
     {
         height: 70px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        cursor: pointer;
-        transition: all .3s;
-        text-decoration: none;
         border-top: 1px solid var(--accent-color);
         border-bottom: 1px solid var(--accent-color);
     }
@@ -154,6 +146,11 @@ header nav ul li a:hover
         padding: 5px;
         padding-right: 35px;
         max-width: 250px;
+    }
+
+    .search-icon
+    {
+        right: 10%;
     }
 
     .search-icon:hover
@@ -180,5 +177,74 @@ header nav ul li a:hover
         margin-left: 10px;
         margin-bottom: 30px;
         user-select: none;
+    }
+}
+
+/* Small Resolutions */
+@media screen and ((min-width: 901px) and (max-width: 1200px)) 
+{
+    header
+    {
+        width: 100vw;
+    }
+    
+    header nav
+    {
+        height: 70px;
+        width: 720px;
+    }
+    
+    header nav ul
+    {
+        gap: 20px;
+    }
+    
+    header nav ul li a
+    {
+        height: 70px;
+    }    
+
+    .main-link
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-box
+    {
+        position: relative;
+        margin-left: auto;
+        max-width: 250px;
+    }
+
+    .nav-search
+    {
+        height: 40px;
+        padding: 5px;
+        padding-right: 40px;
+        max-width: 250px;
+    }
+
+    .search-icon
+    {
+        right: 5%;
+    }
+
+    .hidden
+    {
+        display: block !important;
+    }
+
+    .open-menu-mobile
+    {
+        display: none;
+        visibility: hidden;
+    }
+
+    .close-menu-mobile
+    {
+        display: none;
+        visibility: hidden;
     }
 }

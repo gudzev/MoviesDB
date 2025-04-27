@@ -22,17 +22,16 @@
 
     <div class="wrapper"></div>
 
-    <header>
-    </header>
+    <header></header>
 
     <main id="home">
 
-        <section class="section">
+        <section class="section" id="movies">
 
             <div class="list-header">
                 <h1>Trending Right Now</h1>
             </div>
-            <div class="movie-container">
+            <div class="movie-container js-popular-top-20">
                 <div class="movie">
                     <img src="" class="movie-img" alt="Movie Image">
                     <h2>Movie Name</h2>
@@ -75,7 +74,7 @@
             <div class="list-header">
                 <h1>Best All Time</h1>
             </div>
-            <div class="movie-container">
+            <div class="movie-container js-best-top-20">
                 <div class="movie">
                     <img src="" class="movie-img" alt="Movie Image">
                     <h2>Movie Name</h2>
@@ -115,21 +114,24 @@
 
         </section>
 
-        <section class="section">
+        <section class="section" id="series">
+
+        </section>
+
+        <section class="section" id="tobenamed">
 
         </section>
 
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
 
     <script src="https://kit.fontawesome.com/ce28afb7ec.js" crossorigin="anonymous"></script>
 
-    <script src="scripts/fetchMovies.js" type="module" defer></script>
+    <script src="scripts/displayMovies.js" type="module" defer></script>
 
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
 
     <script src="functions/removeWrapper.js" defer></script>
     

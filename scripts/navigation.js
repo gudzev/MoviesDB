@@ -10,9 +10,8 @@ function displayHeader()
             <ul class="navbar-mobile">
                 <i class="fa-solid fa-xmark close-menu-mobile hidden"></i>
                 <li><a class="main-link" href="index.html">MoviesDB</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#series">TV Series</a></li>
             </ul>
             <div class="search-box">
                 <input type="search" class="nav-search">
@@ -23,17 +22,23 @@ function displayHeader()
     const openMenuBtn = document.querySelector(".open-menu-mobile");
     const closeMenuBtn = document.querySelector(".close-menu-mobile");
     const mobileNavBar = document.querySelector(".navbar-mobile");
+    const mobileNavBarButtons = mobileNavBar.querySelectorAll("li");
 
-    document.addEventListener("DOMContentLoaded", () => 
+    openMenuBtn.addEventListener("click", () => 
     {
-        openMenuBtn.addEventListener("click", () => 
-        {
-            mobileNavBar.classList.toggle("navbar-active");
-        });
+        mobileNavBar.classList.toggle("navbar-active");
+    });
 
-        closeMenuBtn.addEventListener("click", () => 
+    closeMenuBtn.addEventListener("click", () => 
+    {
+        mobileNavBar.classList.toggle("navbar-active");
+    });
+
+    mobileNavBarButtons.forEach((btn) =>
+    {
+        btn.addEventListener("click", () =>
         {
             mobileNavBar.classList.toggle("navbar-active");
-        });
+        })
     });
 }
