@@ -1,0 +1,87 @@
+import { Series, Movie } from "../data/media.js";
+import { SeriesFetcher, MovieFetcher } from "../data/fetcher.js";
+
+// displaying movies
+displayContent(`popular`, `movies`);
+displayContent(`best`, `movies`);
+
+// displaying series
+displayContent(`popular`, `series`);
+displayContent(`best`, `series`);
+
+async function displayContent(listType, mediaType)
+{
+    const fetcher = (mediaType === `series`) ? new SeriesFetcher() : new MovieFetcher();
+    const data = (listType === `best`) ? await fetcher.getBestTop20() : await fetcher.getPopularTop20();
+    const dataResults = data.results;
+
+    const mediaContainer = document.querySelector(`.js-${listType}-${mediaType}-top-20`);
+
+    fetcher.sortSeriesByRating(dataResults);
+
+    let mediaContainerHTML = ``;
+
+    dataResults.forEach((entry) =>
+    {
+        const mediaData =
+        {
+            mediaLanguage: entry.original_language,
+            mediaId: entry.id,
+            mediaTitle: (mediaType === `series`) ? entry.name : entry.title,
+            mediaDescription: entry.overview,
+            mediaPopularity: entry.popularity,
+            mediaRating: entry.vote_average,
+            mediaPosterPath: `https://image.tmdb.org/t/p/original/${entry.poster_path}`,
+        }
+
+        const media = (mediaType === `series`) ? new Series(mediaData) : new Movie(mediaData);
+
+        mediaContainerHTML += `
+        <div class="movie">
+            <img src="${media.mediaPosterPath}" class="movie-img" alt="Movie Image">
+            <h2 class="movie-title">${media.mediaTitle}</h2>
+            <h2 class="movie-rating">Rating: ${media.mediaRating}</h2>
+        </div>`
+    });
+
+    mediaContainer.innerHTML += mediaContainerHTML;
+
+    const sliderRight = document.querySelector(`.slider-right-${listType}-${mediaType}`);
+    const sliderLeft = document.querySelector(`.slider-left-${listType}-${mediaType}`);
+
+    sliderRight.addEventListener("click", () =>
+    {
+        mediaContainer.scrollBy(getScrollLength(), 0);
+    });
+
+    sliderLeft.addEventListener("click", () =>
+    {
+        mediaContainer.scrollBy(-getScrollLength(), 0);
+    });
+
+    function getScrollLength() 
+    {
+        const movieItem = mediaContainer.querySelector(".movie");
+        const itemStyle = getComputedStyle(movieItem);
+    
+        const movieWidth = movieItem.offsetWidth;
+        const marginRight = parseFloat(itemStyle.marginRight) || 0;
+    
+        const totalItemWidth = movieWidth + marginRight;
+    
+        const visibleWidth = mediaContainer.clientWidth;
+        const itemsPerPage = Math.floor(visibleWidth / totalItemWidth);
+    
+        const scrollAmount = totalItemWidth * itemsPerPage;
+    
+        if(itemsPerPage <= 3)
+        {
+            return scrollAmount + 12;
+        }
+        else
+        {
+            return scrollAmount + 50;
+        }
+    }
+    
+}

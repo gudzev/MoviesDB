@@ -10,12 +10,12 @@ function displayHeader()
             <ul class="navbar-mobile">
                 <i class="fa-solid fa-xmark close-menu-mobile hidden"></i>
                 <li><a class="main-link" href="index.html">MoviesDB</a></li>
-                <li><a href="#movies">Movies</a></li>
-                <li><a href="#series">TV Series</a></li>
+                <li><a href="index.html#movies">Movies</a></li>
+                <li><a href="index.html#series">TV Series</a></li>
             </ul>
             <div class="search-box">
-                <input type="search" class="nav-search">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="search" class="nav-search" placeholder="Search for a TV Show..." id="js-search">
+                <i class="fa-solid fa-magnifying-glass search-icon" id="js-search-btn"></i>
             </div>
         </nav>`;
 

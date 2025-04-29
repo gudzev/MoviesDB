@@ -12,6 +12,7 @@ main
     flex-direction: column;
     align-items: center;
     padding-top: 140px;
+    padding-bottom: 70px;
 }
 
 .list-header
@@ -31,31 +32,75 @@ main
     font-weight: bold;
 }
 
-.movie-container
+.container
 {
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 37px;
     height: 440px;
     width: 1200px;
     overflow-y: hidden;
     overflow-x: auto;
 }
 
+.movie-container
+{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 1200px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.movie-container-wrapper
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    pointer-events: none;
+}
+
 .movie
 {
-    width: 17.5vh;
+    position: relative;
+    width: 220px;
     height: 100%;
     background-color: var(--text-color);
     flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0px 10px;
 }
 
 .movie-img
 {
     width: 100%;
     height: 70%;
+}
+
+.movie-title
+{
+    font-size: .9rem;
+    margin-left: 5px;
+}
+
+.movie-rating
+{
+    position: absolute;
+    bottom: 3.5%;
+    font-size: .9rem;
+    margin-left: 5px;
 }
 
 .spacer
@@ -68,9 +113,20 @@ main
     background-color: var(--primary-hover);
 }
 
-#tobenamed
+.slide-right, .slide-left
 {
-    background-color: var(--primary-color);
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: all .3s;
+    pointer-events: auto;
+}
+
+.slide-right, .slide-left:hover
+{
+    color: var(--accent-hover);
 }
 
 /* Mobile */
@@ -81,65 +137,127 @@ main
         background-color: var(--primary-color);
         height: 100%;
         width: 100vw;
-        padding-top: 140px;
+        padding-top: 120px;
     }
 
     .section
     {
         position: relative;
-        height: 100vh;
+        height: calc(100vh + 125px);
         width: 100vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 0px;
     }
 
     .list-header
     {
-        font-weight: bold;
         width: 100vw;
         height: 70px;
-        
-        display: flex;
-        align-items: center;
     }
 
     .list-header h1
     {
         font-size: 1.2rem;
-        color: var(--text-color);
-        font-weight: bold;
         padding: 0px 20px;
     }
 
-    .movie-container
+    .container, .movie-container
     {
-        position: relative;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 15px;
-        height: 360px;
+        height: 356px;
         width: 95vw;
-        padding: 0px 5px;
-        overflow-y: hidden;
-        overflow-x: auto;
     }
 
     .movie
     {
         display: flex;
         flex-direction: column;
-        width: 165px;
-        height: 330px;
+        width: 44vw;
+        height: 300px;
         background-color: var(--text-color);
         flex-shrink: 0;
+        border-radius: 10px;
+        margin: 0px 6px;
     }
 
     .spacer
     {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-top: 25px;
+    }
+
+    .movie-title
+    {
+        text-align: left;
+        font-size: .9rem;
+        height: 50px;
+        width: 100%;
+    }
+}
+
+@media screen and ((min-width: 901px) and (max-width: 1440px)) 
+{
+    main
+    {
+        background-color: var(--primary-color);
+        height: 100%;
+        width: 100vw;
+        padding-top: 120px;
+    }
+
+    .section
+    {
+        position: relative;
+        height: calc(100vh + 125px);
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+    }
+
+    .list-header
+    {
+        width: 900px;
+        height: 70px;
+    }
+
+    .list-header h1
+    {
+        font-size: 1.2rem;
+        padding: 0px 20px;
+    }
+
+    .container, .movie-container
+    {
+        height: 356px;
+        width: 900px;
+    }
+
+    .movie
+    {
+        display: flex;
+        flex-direction: column;
+        width: 220px;
+        height: 100%;
+        background-color: var(--text-color);
+        flex-shrink: 0;
+        border-radius: 10px;
+        margin: 0px 6px;
+    }
+
+    .spacer
+    {
+        margin-top: 25px;
+    }
+
+    .movie-title
+    {
+        text-align: left;
+        font-size: .9rem;
+        height: 50px;
+        width: 100%;
     }
 }
