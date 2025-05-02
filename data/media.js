@@ -7,6 +7,7 @@ export class Media
     mediaLanguage;
     mediaPopularity;
     mediaDescription;
+    mediaType;
 
     constructor(mediaData)
     {
@@ -17,6 +18,12 @@ export class Media
         this.mediaLanguage = mediaData.mediaLanguage;
         this.mediaPopularity = mediaData.mediaPopularity;
         this.mediaDescription = mediaData.mediaDescription;
+        this.mediaType = mediaData.mediaType;
+    }
+
+    getImageURL(path)
+    {
+        return `https://image.tmdb.org/t/p/original/${path}`;
     }
 }
 

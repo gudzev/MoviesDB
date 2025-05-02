@@ -31,14 +31,15 @@ async function displayContent(listType, mediaType)
             mediaDescription: entry.overview,
             mediaPopularity: entry.popularity,
             mediaRating: entry.vote_average,
-            mediaPosterPath: `https://image.tmdb.org/t/p/original/${entry.poster_path}`,
+            mediaPosterPath: entry.poster_path,
+            mediaType: entry.media_type,
         }
 
         const media = (mediaType === `series`) ? new Series(mediaData) : new Movie(mediaData);
 
         mediaContainerHTML += `
         <div class="movie">
-            <img src="${media.mediaPosterPath}" class="movie-img" alt="Movie Image">
+            <img src="${media.getImageURL(media.mediaPosterPath)}" class="movie-img" alt="Movie Image">
             <h2 class="movie-title">${media.mediaTitle}</h2>
             <h2 class="movie-rating">Rating: ${media.mediaRating}</h2>
         </div>`

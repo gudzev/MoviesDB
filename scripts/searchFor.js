@@ -1,5 +1,3 @@
-import { Fetcher } from "../data/fetcher.js";
-
 const searchInput = document.querySelector("#js-search");
 const searchBtn = document.querySelector("#js-search-btn");
 
@@ -16,7 +14,7 @@ searchInput.addEventListener("keydown", (event) =>
     }
 })
 
-async function openWindow(inputString)
+function openWindow(inputString)
 {
     window.open(`search.html?query=${encodeURIComponent(inputString)}`, "_self");
 }

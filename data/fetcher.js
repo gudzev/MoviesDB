@@ -1,4 +1,4 @@
-import { options } from "../api/api.js";
+import { options } from "../netlify/functions/api.js";
 
 export class Fetcher
 {

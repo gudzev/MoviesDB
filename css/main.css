@@ -20,6 +20,7 @@ main
     font-weight: bold;
     width: 1200px;
     height: 70px;
+    padding-left: 10px;
     
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@ main
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 440px;
+    height: 100%;
     width: 1200px;
     overflow-y: hidden;
     overflow-x: auto;
@@ -76,6 +77,7 @@ main
     position: relative;
     width: 220px;
     height: 100%;
+    max-height: 450px;
     background-color: var(--text-color);
     flex-shrink: 0;
     border-radius: 10px;
@@ -105,7 +107,7 @@ main
 
 .spacer
 {
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 #series
@@ -232,7 +234,7 @@ main
 
     .container, .movie-container
     {
-        height: 356px;
+        height: 100%;
         width: 900px;
     }
 
