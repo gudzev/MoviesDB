@@ -77,7 +77,7 @@ async function displayContent(listType, mediaType)
     
         if(itemsPerPage <= 3)
         {
-            return scrollAmount + 12;
+            return scrollAmount + 17;
         }
         else
         {
