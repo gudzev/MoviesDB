@@ -25,6 +25,18 @@ export class Media
     {
         return `https://image.tmdb.org/t/p/original/${path}`;
     }
+
+    formatTitle(title)
+    {
+        if(title.length > 35)
+        {
+            return this.mediaTitle.substring(0, 40) + "...";
+        }
+        else
+        {
+            return title;
+        }
+    }
 }
 
 export class Movie extends Media

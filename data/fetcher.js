@@ -1,27 +1,12 @@
-import { options } from "../netlify/functions/api.js";
+import { options } from "../api/api.js";
 
 export class Fetcher
 {
-    async getBestTop20()
-    {
-        return ``;
-    }
-
-    async getPopularTop20()
-    {
-        return ``;
-    }
-
-    async getSeries()
-    {
-        return ``;
-    }
-
     async searchMedia(mediaName)
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/search/multi?include_adult=false&language=en-US&page=1&query=${mediaName}`, options);
+            const request = await fetch(`https://api.themoviedb.org/3/search/multi?include_adult=false&language=en-US&page=1&query=${encodeURIComponent(mediaName)}`, options);
             const data = await request.json();
             return data;
         }
@@ -41,11 +26,19 @@ export class Fetcher
 
 export class MovieFetcher extends Fetcher
 {
+    movieLinks = 
+    {
+        baseLink: "https://api.themoviedb.org/3/movie",
+        topRated: "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+        mostPopular: "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+        getMovie: "https://api.themoviedb.org/3/search/movie?query=",
+    };
+
     async getPopularTop20()
     {
         try
         {
-            const request = await fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options);
+            const request = await fetch(this.movieLinks.mostPopular, options);
             let data = await request.json();
             return data;
         }
@@ -59,7 +52,7 @@ export class MovieFetcher extends Fetcher
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(movieName)}`, options);
+            const request = await fetch(this.movieLinks.getMovie + encodeURIComponent(movieName), options);
             const data = await request.json();
             return data;
         }
@@ -73,7 +66,7 @@ export class MovieFetcher extends Fetcher
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1`, options);
+            const request = await fetch(this.movieLinks.topRated, options);
             const data = await request.json();
             return data;
         }
@@ -88,11 +81,19 @@ export class MovieFetcher extends Fetcher
 
 export class SeriesFetcher extends Fetcher
 {
+    seriesLinks = 
+    {
+        baseLink: "https://api.themoviedb.org/3/tv",
+        topRated: "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
+        mostPopular: "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
+        getSeries: "https://api.themoviedb.org/3/search/tv?query=",
+    };
+
     async getBestTop20()
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1`, options);
+            const request = await fetch(this.seriesLinks.topRated, options);
             const data = await request.json();
             return data;
         }
@@ -106,7 +107,7 @@ export class SeriesFetcher extends Fetcher
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/tv/popular?language=en-US&page=1`, options);
+            const request = await fetch(this.seriesLinks.mostPopular, options);
             const data = await request.json();
             return data;
         }
@@ -120,7 +121,7 @@ export class SeriesFetcher extends Fetcher
     {
         try
         {
-            const request = await fetch(`https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(seriesName)}`, options);
+            const request = await fetch(this.seriesLinks.getSeries + encodeURIComponent(seriesName), options);
             const data = await request.json();
             return data;
         }

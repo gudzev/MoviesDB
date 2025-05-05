@@ -40,7 +40,7 @@ async function displayContent(listType, mediaType)
         mediaContainerHTML += `
         <div class="movie">
             <img src="${media.getImageURL(media.mediaPosterPath)}" class="movie-img" alt="Movie Image">
-            <h2 class="movie-title">${media.mediaTitle}</h2>
+            <h2 class="movie-title">${media.formatTitle(media.mediaTitle)}</h2>
             <h2 class="movie-rating">Rating: ${media.mediaRating}</h2>
         </div>`
     });
