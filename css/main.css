@@ -111,11 +111,6 @@ main
     margin-left: 5px;
 }
 
-.spacer
-{
-    margin-top: 25px;
-}
-
 #series
 {
     background-color: var(--primary-hover);
@@ -213,6 +208,7 @@ main
     }
 }
 
+/* Small Desktop */
 @media screen and ((min-width: 901px) and (max-width: 1440px)) 
 {
     main
@@ -220,13 +216,12 @@ main
         background-color: var(--primary-color);
         height: 100%;
         width: 100vw;
-        padding-top: 120px;
     }
 
     .section
     {
         position: relative;
-        height: calc(100vh + 125px);
+        height: 1080px;
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -276,5 +271,57 @@ main
         font-size: .9rem;
         height: 50px;
         width: 100%;
+    }
+}
+
+/* Big Desktop */
+
+@media screen and (min-height: 1081px) 
+{
+    main
+    {
+        background-color: var(--primary-color);
+        height: 100%;
+    }
+    
+    .section
+    {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    
+    .list-header
+    {
+        width: 1200px;
+        height: 30px;
+    }
+
+    
+    .movie-wrapper 
+    {
+        height: 40vh;
+        margin: 10px;
+        max-height: 900px;
+    }
+    
+    .container
+    {
+        height: 100%;
+        width: 1200px;
+        max-height: 600px;
+    }
+    
+    .movie-container
+    {
+        width: 1200px;
+        max-height: 600px;
+    }
+    
+    .movie
+    {
+        width: 8.6vw;
+        max-width: 220px;
+        height: 35vh;
+        max-height: 600px;
     }
 }

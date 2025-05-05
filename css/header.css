@@ -248,3 +248,13 @@ header nav ul li a:hover
         visibility: hidden;
     }
 }
+
+
+/* Big Desktop */
+@media screen and (min-height: 1081px)
+{
+    header nav
+    {
+        width: 1200px;
+    }
+}
