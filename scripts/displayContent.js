@@ -1,13 +1,19 @@
 import { Series, Movie } from "../data/media.js";
 import { SeriesFetcher, MovieFetcher } from "../data/fetcher.js";
+import { makeMediasOpenable } from "../functions/makeMediaOpenable.js";
 
-// displaying movies
-displayContent(`popular`, `movies`);
-displayContent(`best`, `movies`);
+Promise.all(
+    [
+    displayContent(`popular`, `movie`),
+    displayContent(`best`, `movie`),
+    displayContent(`popular`, `series`),
+    displayContent(`best`, `series`),
+    ]
+).then(() =>
+{
+    makeMediasOpenable();
+});
 
-// displaying series
-displayContent(`popular`, `series`);
-displayContent(`best`, `series`);
 
 async function displayContent(listType, mediaType)
 {
@@ -38,7 +44,7 @@ async function displayContent(listType, mediaType)
         const media = (mediaType === `series`) ? new Series(mediaData) : new Movie(mediaData);
 
         mediaContainerHTML += `
-        <div class="movie">
+        <div class="movie" data-media-id=${media.mediaId} data-media-type=${mediaType}>
             <img src="${media.getImageURL(media.mediaPosterPath)}" class="movie-img" alt="Movie Image">
             <h2 class="movie-title">${media.formatTitle(media.mediaTitle)}</h2>
             <h2 class="movie-rating">Rating: ${media.mediaRating}</h2>

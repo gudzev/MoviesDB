@@ -120,6 +120,7 @@
     border-radius: 10px;
     overflow: hidden;
     margin: 10px 10px;
+    cursor: pointer;
 }
 
 .movie-img
@@ -229,5 +230,27 @@
         right: 3%;
         font-size: .9rem;
         margin-left: 5px;
+    }
+}
+
+/* Big Desktop */
+@media screen and (min-height: 1081px) 
+{
+    .section-title
+    {
+        width: 1200px;
+    }
+
+    .movie-container-wrapper
+    {
+        width: 1200px;
+    }
+
+    .movie
+    {
+        max-width: 280px;
+        max-height: 600px;
+        width: 8.5vw;
+        height: 30vh;
     }
 }

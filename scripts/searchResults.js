@@ -1,12 +1,16 @@
 import {Fetcher} from "../data/fetcher.js";
 import { Movie, Series } from "../data/media.js";
+import { makeMediasOpenable } from "../functions/makeMediaOpenable.js";
 
 const currentURL = new URL(window.location.href);
 const search = currentURL.searchParams.get('query');
 
 document.addEventListener("DOMContentLoaded", () =>
 {
-    displaySearchResults(search);
+    Promise.all([displaySearchResults(search)]).then(() =>
+    {
+        makeMediasOpenable();
+    });
 });
 
 async function displaySearchResults(search)
@@ -23,7 +27,7 @@ async function displaySearchResults(search)
     {
         searchResults.forEach((result) => 
         {
-            if(result.media_type === `person` || result.poster_path === null) return;
+            if(result.media_type === `person` || result.poster_path === null || result.vote_average == 0) return;
 
             const mediaData =
             {
@@ -40,7 +44,7 @@ async function displaySearchResults(search)
             const newMedia = (mediaData.mediaType === `movie`) ? new Movie(mediaData) : new Series(mediaData);
 
             resultsDivHTML += `
-            <div class="movie">
+            <div class="movie" data-media-id=${newMedia.mediaId} data-media-type=${newMedia.mediaType}>
                 <img src="${newMedia.getImageURL(newMedia.mediaPosterPath)}" class="movie-img" alt="Movie Image">
                 <h2 class="movie-title">${newMedia.formatTitle(newMedia.mediaTitle)}</h2>
                 <h2 class="movie-rating">Rating: <span class="movie-rating-number">${newMedia.mediaRating}</span></h2>
@@ -52,8 +56,8 @@ async function displaySearchResults(search)
         resultsDivHTML = `<h1 class="no-results">No matches. Try again</h1>`;
     }
 
-    numberOfResults.innerHTML = `(${searchResults.length})` || '0';
     resultsDiv.innerHTML = resultsDivHTML;
+    numberOfResults.innerHTML = `(${document.querySelectorAll(".movie").length})` || '0';
 }
 
 

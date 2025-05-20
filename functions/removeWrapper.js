@@ -4,6 +4,6 @@ window.addEventListener("load", () =>
 
     if(wrapper)
     {
-        setTimeout(() => wrapper.remove(), 250);
+        setTimeout(() => wrapper.remove(), 350);
     }
 });

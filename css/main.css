@@ -89,6 +89,7 @@ main
     border-radius: 10px;
     overflow: hidden;
     margin: 0px 10px;
+    cursor: pointer;
 }
 
 .movie-img
