@@ -13,6 +13,7 @@ This app uses the [TMDB (The Movie Database) API](https://developer.themoviedb.o
 
 ## 📋 Features
 
+- Display of top 20 tv series/movies
 - Search for movies by title
 - View basic movie details (poster, release date, rating, etc.)
 - Responsive UI
