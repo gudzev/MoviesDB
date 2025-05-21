@@ -39,6 +39,7 @@ async function displayContent(listType, mediaType)
             mediaRating: entry.vote_average,
             mediaPosterPath: entry.poster_path,
             mediaType: entry.media_type,
+            mediaGenre: entry.genres,
         }
 
         const media = (mediaType === `series`) ? new Series(mediaData) : new Movie(mediaData);

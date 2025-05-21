@@ -8,6 +8,7 @@ export class Media
     mediaPopularity;
     mediaDescription;
     mediaType;
+    mediaGenres;
 
     constructor(mediaData)
     {
@@ -19,6 +20,7 @@ export class Media
         this.mediaPopularity = mediaData.mediaPopularity;
         this.mediaDescription = mediaData.mediaDescription;
         this.mediaType = mediaData.mediaType;
+        this.mediaGenres = mediaData.mediaGenres;
     }
 
     getImageURL(path)

@@ -233,6 +233,55 @@
     }
 }
 
+/* Small Desktop */
+@media screen and ((min-width: 901px) and (max-width: 1440px)) 
+{
+    .section-title
+    {
+        width: 900px;
+    }
+
+    .movie-container-wrapper
+    {
+        width: 900px;
+        justify-content: space-between;
+    }
+
+    .movie
+    {
+        display: block;
+        position: relative;
+        width: 200px;
+        height: 380px;
+        background-color: var(--text-color);
+        flex-shrink: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 10px 10px;
+        cursor: pointer;
+    }
+
+    .movie-img
+    {
+        width: 100%;
+        height: 70%;
+    }
+
+    .movie-title
+    {
+        font-size: .9rem;
+        margin-left: 5px;
+    }
+
+    .movie-rating
+    {
+        position: absolute;
+        bottom: 1.5%;
+        font-size: .9rem;
+        margin-left: 5px;
+    }
+}
+
 /* Big Desktop */
 @media screen and (min-height: 1081px) 
 {

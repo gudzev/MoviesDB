@@ -39,6 +39,7 @@ async function displaySearchResults(search)
                 mediaPopularity: result.popularity,
                 mediaDescription: result.overview,
                 mediaType: result.media_type,
+                mediaGenre: result.genres,
             };
 
             const newMedia = (mediaData.mediaType === `movie`) ? new Movie(mediaData) : new Series(mediaData);
