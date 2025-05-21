@@ -1,6 +1,7 @@
 import { Series, Movie } from "../data/media.js";
 import { SeriesFetcher, MovieFetcher } from "../data/fetcher.js";
 import { makeMediasOpenable } from "../functions/makeMediaOpenable.js";
+import { removeWrapper } from "../functions/removeWrapper.js";
 
 Promise.all(
     [
@@ -12,6 +13,7 @@ Promise.all(
 ).then(() =>
 {
     makeMediasOpenable();
+    removeWrapper();
 });
 
 

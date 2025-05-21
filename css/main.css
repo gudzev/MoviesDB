@@ -128,9 +128,9 @@ main
     pointer-events: auto;
 }
 
-.slide-right, .slide-left:hover
+.slide-right:hover, .slide-left:hover
 {
-    color: var(--accent-hover);
+    color: var(--accent-strong);
 }
 
 /* Mobile */

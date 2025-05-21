@@ -1,6 +1,7 @@
 import {Fetcher} from "../data/fetcher.js";
 import { Movie, Series } from "../data/media.js";
 import { makeMediasOpenable } from "../functions/makeMediaOpenable.js";
+import { removeWrapper } from "../functions/removeWrapper.js";
 
 const currentURL = new URL(window.location.href);
 const search = currentURL.searchParams.get('query');
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () =>
     Promise.all([displaySearchResults(search)]).then(() =>
     {
         makeMediasOpenable();
+        removeWrapper();
     });
 });
 

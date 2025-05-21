@@ -1,9 +1,18 @@
 import { Fetcher } from "../data/fetcher.js";
 import { Movie, Series } from "../data/media.js";
+import { removeWrapper } from "../functions/removeWrapper.js";
 
 const mediaPage = document.querySelector(".media-page");
 
-displayMediaInformation(getMediaId(), getMediaType());
+Promise.all
+(
+    [
+    displayMediaInformation(getMediaId(), getMediaType())
+    ]
+).then(() =>
+{
+    removeWrapper();
+});
 
 async function displayMediaInformation(id, type)
 {
