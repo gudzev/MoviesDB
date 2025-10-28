@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movies Database</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/essentials.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/wrapper.css">
+    <link rel="stylesheet" href="css/title.css">
+
+    <meta name="description" content="Explore trending and all-time best movies and series. Discover what's popular right now!">
+    <meta name="keywords" content="best movies,best tv shows, trending, best, popular, series, database, moviesdb, movies, tv shows">
+    <meta name="author" content="Marko Gudžev">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0D1B2A">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <header></header>
+
+    <main id="home">
+
+        <section class="section" id="movies">
+
+            <div class="movie-wrapper">
+                <div class="list-header">
+                    <h1>Trending Right Now</h1>
+                </div>
+    
+                <div class="container">
+                    <div class="movie-container js-popular-movie-top-20">
+    
+                    </div>
+                    <div class="movie-container-wrapper">
+                        <i class="fa-regular fa-square-caret-left slide-left slider-left-popular-movie"></i>
+                        <i class="fa-regular fa-square-caret-right slide-right slider-right-popular-movie"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-wrapper">
+                <div class="list-header">
+                    <h1>Best All Time</h1>
+                </div>
+                
+                <div class="container">
+                    <div class="movie-container js-best-movie-top-20">
+    
+                    </div>
+                    <div class="movie-container-wrapper">
+                        <i class="fa-regular fa-square-caret-left slide-left slider-left-best-movie"></i>
+                        <i class="fa-regular fa-square-caret-right slide-right slider-right-best-movie"></i>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <section class="section" id="series">
+
+            <div class="movie-wrapper">
+                <div class="list-header">
+                    <h1>Trending Right Now</h1>
+                </div>
+    
+                <div class="container">
+                    <div class="movie-container js-popular-tv-top-20">
+    
+                    </div>
+                    <div class="movie-container-wrapper">
+                        <i class="fa-regular fa-square-caret-left slide-left slider-left-popular-tv"></i>
+                        <i class="fa-regular fa-square-caret-right slide-right slider-right-popular-tv"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-wrapper">
+                <div class="list-header">
+                    <h1>Best All Time</h1>
+                </div>
+                
+                <div class="container">
+                    <div class="movie-container js-best-tv-top-20">
+    
+                    </div>
+                    <div class="movie-container-wrapper">
+                        <i class="fa-regular fa-square-caret-left slide-left slider-left-best-tv"></i>
+                        <i class="fa-regular fa-square-caret-right slide-right slider-right-best-tv"></i>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="https://kit.fontawesome.com/ce28afb7ec.js" crossorigin="anonymous"></script>
+
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/footer.js" defer type="module"></script>
+
+    <script src="scripts/displayContent.js" type="module" defer></script>
+    <script src="scripts/searchFor.js" type="module" defer></script>
+    
+</body>
+</html>

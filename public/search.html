@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movies Database</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/essentials.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/wrapper.css">
+    <link rel="stylesheet" href="css/searchPage.css">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="loader">
+        </div>
+    </div>
+
+    <header></header>
+
+    <main>
+
+        <section class="search-results">
+
+            <div class="section-title">
+                <h1>Search Results <span class="number-of-search-results"></span></h1>
+
+                <div class="dropdown">
+                    <button class="dropdown-btn"><i class="fa-solid fa-sort icon"></i>Sort by</button>
+                        <ul class="dropdown-items-container">
+                            <li>Rating Descending<i class="fa-solid fa-sort-down icon"></i></li>
+                            <li>Rating Ascending<i class="fa-solid fa-sort-up icon"></i></li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="movie-container-wrapper">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="https://kit.fontawesome.com/ce28afb7ec.js" crossorigin="anonymous"></script>
+
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/footer.js" defer type="module"></script>
+
+    <script src="scripts/searchResults.js" defer type="module"></script>
+    <script src="scripts/searchFor.js" defer></script>
+    <script src="scripts/searchDropdown.js" defer type="module"></script>
+    
+</body>
+</html>
